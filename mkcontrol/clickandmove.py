@@ -1,10 +1,19 @@
 import time
 
-import pyautogui as pg
+import pydirectinput as pg
 
-if __name__ == '__main__':
-    pg.moveTo(1500,-1080,0.5)
-    pg.moveTo(1108,-1067)
+def yuanshen():
+    pg.moveTo(1172,434, 1)
+    # pg.click()
+    # pg.press('m')
+    # pg.moveTo(1364, 656, 1)
+    # pg.click()
+    # pg.moveTo(1618, 715, 1)
+    # pg.click()
+
+def test():
+    pg.moveTo(1500, -1080, 0.5)
+    pg.moveTo(1108, -1067)
     pg.click()
     pg.moveTo(392, -574)
     pg.dragTo(654, -574, 1, button='left')
@@ -14,5 +23,11 @@ if __name__ == '__main__':
     pg.press('backspace')
     time.sleep(1)
     pg.hotkey('command', 'v')
+
+
+if __name__ == '__main__':
+    while True:
+        yuanshen()
+        time.sleep(3)
 
 
