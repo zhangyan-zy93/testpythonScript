@@ -15,6 +15,16 @@ def move_click(x,y):
     pg.moveTo(x, y, t)
     pg.click()
 
+def randomCoordinate(x1, y1, x2, y2):
+    return random.randint(x1,x2),random.randint(y1,y2)
+
+
+def random_move_click(screen, adjustmentList):
+    x1, y1, x2, y2 = screen.boundary(adjustmentList)
+    x,y = randomCoordinate(x1, y1, x2, y2)
+    move_click(x,y)
+
+
 
 if __name__ == '__main__':
     move_click(1361, 673)

@@ -63,6 +63,8 @@ class MatchImg(object):
         """
         pos = self.match_template()
         points = []
+        if pos == None:
+            return points
         for p in pos:
             x, y = p[0] + int(self.template_img.width / 2), p[1] + int(self.template_img.height / 2)
             points.append((x, y))
@@ -93,13 +95,13 @@ def draw(points,pic):
     cv2.imwrite('22.png', img)
 
 if __name__ == "__main__":
-    img1 = load_image_file('../pics/map.png')
-    img2 = load_image_file('../pics/meirirenwu.png')
+    img1 = load_image_file('../pic/yunxing/aaa.png')
+    img2 = load_image_file('../pic/diaoyu.png')
 
-    process = MatchImg(img1, img2, 0.5)
+    process = MatchImg(img1, img2, 0.9)
     points = process.get_img_center()
 
     print(points)
-    draw(points,'../pics/map.png')
+    draw(points,'../pic/yunxing/aaa.png')
 
 

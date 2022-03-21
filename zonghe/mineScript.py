@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     # meiri()
     # move_click(1361,673)
-    # move_click(1610, 721)
+    # move_click(1610, 72                          1)
     while True:
         trunLeft()
         time.sleep(random_time()*2)

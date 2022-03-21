@@ -9,18 +9,18 @@ from tool.win32tool import findTitle, get_window_rect
 import pyautogui as pg
 
 # 得到原神窗口的坐标
-def getwin():
-    hwnd = findTitle('原神')
+def getwin(title):
+    hwnd = findTitle(title)
     win32gui.SetForegroundWindow(hwnd)
     win32gui.SendMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_RESTORE, 0)
-    hwnd = findTitle('原神')
+    hwnd = findTitle(title)
     #  GetWindowRect 获得整个窗口的范围矩形，窗口的边框、标题栏、滚动条及菜单等都在这个矩形内
     x1, y1, x2, y2 = get_window_rect(hwnd)
     print(x1, y1, x2, y2)
     return x1, y1, x2, y2
 
 def enter():
-    x1, y1, x2, y2 = getwin()
+    x1, y1, x2, y2 = getwin('原神')
     x,y = getRandomCoordinate(x1, y1, x2, y2)
     move_click(x,y)
 
